@@ -1,0 +1,13 @@
+services:
+  akari:
+    container_name: akari
+    image: akari:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+    ports:
+      - 123:123/udp
